@@ -1557,6 +1557,7 @@ function Library:AddDraggableButton(Text: string, Func, ExcludeScaling: boolean?
     Library:AddOutline(Button)
 
     Button.MouseButton1Click:Connect(function()
+        print(1)
         Library:SafeCallback(Func, Table)
     end)
     Library:MakeDraggable(Button, Button, true)
@@ -2228,6 +2229,7 @@ do
 
             KeyPicker.DoClick = function(...) end --// make luau lsp shut up
             Holder.MouseButton1Click:Connect(function()
+                print(2)
                 if KeybindsToggle.Normal then
                     return
                 end
@@ -2283,6 +2285,7 @@ do
             end
 
             Button.MouseButton1Click:Connect(function()
+                print(3)
                 ModeButton:Select()
             end)
 
@@ -2436,6 +2439,7 @@ do
         end
 
         Picker.MouseButton1Click:Connect(function()
+            print(4)
             if Picking then
                 return
             end
@@ -2830,6 +2834,7 @@ do
                 })
 
                 Button.MouseButton1Click:Connect(function()
+                    print(5)
                     Library:SafeCallback(Func)
                     ContextMenu:Close()
                 end)
@@ -3323,6 +3328,7 @@ do
             end)
 
             Button.Base.MouseButton1Click:Connect(function()
+                print(6)
                 if Button.Disabled or Button.Locked then
                     return
                 end
@@ -3348,8 +3354,6 @@ do
                     Button.Locked = false
                     return
                 end
-
-                print("ema so hot")
 
                 Library:SafeCallback(Button.Func)
             end)
@@ -3671,6 +3675,7 @@ do
         end
 
         Button.MouseButton1Click:Connect(function()
+            print(7)
             if Toggle.Disabled then
                 return
             end
@@ -3893,6 +3898,7 @@ do
         end
 
         Button.MouseButton1Click:Connect(function()
+            print(8)
             if Toggle.Disabled then
                 return
             end
@@ -4595,6 +4601,7 @@ do
 
                 if not IsDisabled then
                     Button.MouseButton1Click:Connect(function()
+                        print(9)
                         local Try = not Selected
 
                         if not (Dropdown:GetActiveValues() == 1 and not Try and not Info.AllowNull) then
@@ -4727,6 +4734,7 @@ do
         end
 
         Display.MouseButton1Click:Connect(function()
+            print(10)
             if Dropdown.Disabled then
                 return
             end
@@ -6919,6 +6927,7 @@ function Library:CreateWindow(WindowInfo)
                 }
 
                 function Tab:Show()
+                    print(111)
                     if Tabbox.ActiveTab then
                         Tabbox.ActiveTab:Hide()
                     end
