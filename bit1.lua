@@ -1004,6 +1004,8 @@ Base64.fromArray = function(array)
 end
 
 Base64.fromString = function(string)
+    print("B64")
+    print(Base64.fromStream(Stream.fromString(string)))
     return Base64.fromStream(Stream.fromString(string));
 end
 
@@ -1483,7 +1485,7 @@ AES.encrypt = function(key, block)
 
 end
 
-AES.decrypt = function(key, block)
+AESAES.decrypt = function(key, block)
 
     local keySchedule = keyExpand(key);
 
@@ -1572,6 +1574,11 @@ AES.decrypt = function(key, block)
     block = shiftRow(block, IROW_SHIFT);
     block = byteSub(block, ISBOX);
     block = addKey(block, keySchedule[1]);
+
+    print("AES")
+    print(key)
+    print("-----")
+    print(block)
 
     return block;
 end
