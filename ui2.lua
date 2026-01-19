@@ -7314,6 +7314,7 @@ function Library:CreateWindow(WindowInfo)
     end
 
     function Library:Toggle(Value: boolean?)
+        print("hehe")
         if typeof(Value) == "boolean" then
             Library.Toggled = Value
         else
