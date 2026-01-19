@@ -1485,7 +1485,7 @@ AES.encrypt = function(key, block)
 
 end
 
-AESAES.decrypt = function(key, block)
+AES.decrypt = function(key, block)
 
     local keySchedule = keyExpand(key);
 
