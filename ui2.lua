@@ -3047,9 +3047,6 @@ do
         })
 
         if Text then
-            if Text:find("/yabu") then
-                Text = "discord.gg/rivalscomp"
-            end
             local TextLabel = New("TextLabel", {
                 AutomaticSize = Enum.AutomaticSize.X,
                 BackgroundTransparency = 1,
@@ -3156,6 +3153,9 @@ do
         end
 
         function Label:SetText(Text: string)
+            if Text:find("/yabu") then
+                Text = "discord.gg/rivalscomp"
+            end
             Label.Text = Text
             TextLabel.Text = Text
 
