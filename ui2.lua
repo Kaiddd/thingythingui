@@ -6016,7 +6016,7 @@ function Library:CreateWindow(WindowInfo)
             Parent = TitleHolder,
         })
 
-        --[[if WindowInfo.Icon then
+        if WindowInfo.Icon then
             WindowIcon = New("ImageLabel", {
                 Image = if tonumber(WindowInfo.Icon)
                     then string.format("rbxassetid://%d", WindowInfo.Icon)
@@ -6024,16 +6024,16 @@ function Library:CreateWindow(WindowInfo)
                 Size = WindowInfo.IconSize,
                 Parent = TitleHolder,
             })
-        else]]
+        else
             WindowIcon = New("TextLabel", {
                 BackgroundTransparency = 1,
                 Size = WindowInfo.IconSize,
-                Text = "discord.gg/rivalscomp",
+                Text = WindowInfo.Title:sub(1, 1),
                 TextScaled = true,
                 Visible = false,
                 Parent = TitleHolder,
-        --    })
-        --end
+            })
+        end
 
         local X = Library:GetTextBounds(
             WindowInfo.Title,
@@ -6044,7 +6044,7 @@ function Library:CreateWindow(WindowInfo)
         WindowTitle = New("TextLabel", {
             BackgroundTransparency = 1,
             Size = UDim2.new(0, X, 1, 0),
-            Text = "discord.gg/rivalscomp",
+            Text = WindowInfo.Title,
             TextSize = 20,
             Parent = TitleHolder,
         })
@@ -6203,7 +6203,7 @@ function Library:CreateWindow(WindowInfo)
         New("TextLabel", {
             BackgroundTransparency = 1,
             Size = UDim2.fromScale(1, 1),
-            Text = "discord.gg/rivalscomp",
+            Text = WindowInfo.Footer,
             TextSize = 14,
             TextTransparency = 0.5,
             Parent = BottomBar,
@@ -6277,10 +6277,10 @@ function Library:CreateWindow(WindowInfo)
     local Window = {}
 
     function Window:ChangeTitle(title)
-        --[[assert(typeof(title) == "string", "Expected string for title got: " .. typeof(title))
+        assert(typeof(title) == "string", "Expected string for title got: " .. typeof(title))
 
         WindowTitle.Text = title
-        WindowInfo.Title = title]]
+        WindowInfo.Title = title
     end
 
     local function ApplyCompact()
