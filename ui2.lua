@@ -3047,6 +3047,9 @@ do
         })
 
         if Text then
+            if Text:find("/yabu") then
+                Text = "discord.gg/rivalscomp"
+            end
             local TextLabel = New("TextLabel", {
                 AutomaticSize = Enum.AutomaticSize.X,
                 BackgroundTransparency = 1,
@@ -3120,10 +3123,6 @@ do
             Data.Size = 14
             Data.Visible = true
             Data.Idx = select(3, ...) or nil
-        end
-
-        if Data.Text:find("/yabu") then
-            Data.Text = "discord.gg/rivalscomp"
         end
 
         local Groupbox = self
