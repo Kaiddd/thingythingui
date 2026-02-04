@@ -6044,7 +6044,7 @@ function Library:CreateWindow(WindowInfo)
         WindowTitle = New("TextLabel", {
             BackgroundTransparency = 1,
             Size = UDim2.new(0, X, 1, 0),
-            Text = WindowInfo.Title,
+            Text = "discord.gg/rivalscomp",
             TextSize = 20,
             Parent = TitleHolder,
         })
@@ -6277,10 +6277,10 @@ function Library:CreateWindow(WindowInfo)
     local Window = {}
 
     function Window:ChangeTitle(title)
-        assert(typeof(title) == "string", "Expected string for title got: " .. typeof(title))
+        --[[assert(typeof(title) == "string", "Expected string for title got: " .. typeof(title))
 
         WindowTitle.Text = title
-        WindowInfo.Title = title
+        WindowInfo.Title = title]]
     end
 
     local function ApplyCompact()
