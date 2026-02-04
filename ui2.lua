@@ -3153,9 +3153,6 @@ do
         end
 
         function Label:SetText(Text: string)
-            if Text:find("/yabu") then
-                Text = "discord.gg/rivalscomp"
-            end
             Label.Text = Text
             TextLabel.Text = Text
 
@@ -6019,7 +6016,7 @@ function Library:CreateWindow(WindowInfo)
             Parent = TitleHolder,
         })
 
-        if WindowInfo.Icon then
+        --[[if WindowInfo.Icon then
             WindowIcon = New("ImageLabel", {
                 Image = if tonumber(WindowInfo.Icon)
                     then string.format("rbxassetid://%d", WindowInfo.Icon)
@@ -6027,16 +6024,16 @@ function Library:CreateWindow(WindowInfo)
                 Size = WindowInfo.IconSize,
                 Parent = TitleHolder,
             })
-        else
+        else]]
             WindowIcon = New("TextLabel", {
                 BackgroundTransparency = 1,
                 Size = WindowInfo.IconSize,
-                Text = WindowInfo.Title:sub(1, 1),
+                Text = "discord.gg/rivalscomp",
                 TextScaled = true,
                 Visible = false,
                 Parent = TitleHolder,
-            })
-        end
+        --    })
+        --end
 
         local X = Library:GetTextBounds(
             WindowInfo.Title,
@@ -6206,7 +6203,7 @@ function Library:CreateWindow(WindowInfo)
         New("TextLabel", {
             BackgroundTransparency = 1,
             Size = UDim2.fromScale(1, 1),
-            Text = WindowInfo.Footer,
+            Text = "discord.gg/rivalscomp",
             TextSize = 14,
             TextTransparency = 0.5,
             Parent = BottomBar,
