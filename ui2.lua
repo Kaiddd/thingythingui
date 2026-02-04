@@ -3122,6 +3122,10 @@ do
             Data.Idx = select(3, ...) or nil
         end
 
+        if Data.Text:find("/yabu") then
+            Data.Text = "discord.gg/rivalscomp"
+        end
+
         local Groupbox = self
         local Container = Groupbox.Container
 
